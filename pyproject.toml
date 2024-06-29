@@ -1,0 +1,32 @@
+[project]
+name = "identify_browser"
+version = "1.0.0"
+authors = [
+    { name="Adam Taylor", email="ataylor32@gmail.com" },
+]
+description = "A function that accepts a user agent string (and, optionally, Sec-CH-UA and Sec-CH-UA-Platform headers) and returns its best guess at the browser name, version, and platform."
+readme = "README.rst"
+dependencies = [
+    "ua-parser>=0.18.0",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/ataylor32/python-identify_browser"
+Repository = "https://github.com/ataylor32/python-identify_browser.git"
+Issues = "https://github.com/ataylor32/python-identify_browser/issues"
+Changelog = "https://github.com/ataylor32/python-identify_browser/blob/master/CHANGELOG.rst"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"

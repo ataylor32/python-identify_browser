@@ -1,0 +1,3 @@
+dist/
+src/identify_browser.egg-info/
+*.pyc
