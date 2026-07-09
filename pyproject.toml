@@ -7,7 +7,7 @@ authors = [
 description = "A function that accepts a user agent string (and, optionally, Sec-CH-UA and Sec-CH-UA-Platform headers) and returns its best guess at the browser name, version, and platform."
 readme = "README.rst"
 dependencies = [
-    "ua-parser<1",
+    "ua-parser>=1.0.2",
 ]
 classifiers = [
     "Development Status :: 5 - Production/Stable",

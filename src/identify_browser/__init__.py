@@ -86,31 +86,51 @@ def identify_browser(
                 "platform": sec_ch_ua_platform[1:-1],
             }
 
+    parsed_string = user_agent_parser.Parse(user_agent)
+    name = parsed_string["user_agent"]["family"]
+    version = parsed_string["user_agent"]["major"]
+    platform = parsed_string["os"]["family"]
+
     if chromium_version is not None:
+        if (
+            "Amazon Silk" in name
+            or "Facebook" in name
+            or "Instagram" in name
+            or "SmartTV WebBrowser" in name
+        ):
+            return {
+                "name": name,
+                "version": version,
+                "platform": platform,
+            }
+
         return {
             "name": "Chromium-based browser",
             "version": chromium_version,
             "platform": sec_ch_ua_platform[1:-1],
         }
 
-    parsed_string = user_agent_parser.Parse(user_agent)
-    name = parsed_string["user_agent"]["family"]
-    version = parsed_string["user_agent"]["major"]
-    platform = parsed_string["os"]["family"]
-
-    if name in (
+    if name == "Aloha Browser":
+        name = "Aloha"
+    elif name in (
         "Chrome",
         "Chrome Mobile",
         "Chrome Mobile iOS",
         "Chrome Mobile WebView",
     ):
         name = "Google Chrome"
+    elif name == "DuckDuckGo Mobile":
+        name = "DuckDuckGo"
+    elif name == "Ecosia iOS":
+        name = "Ecosia"
     elif name in ("Edge", "Edge Mobile"):
         name = "Microsoft Edge"
     elif name in ("Firefox iOS", "Firefox Mobile"):
         name = "Firefox"
     elif name == "Mobile Safari":
         name = "Safari"
+    elif name == "Opera Touch":
+        name = "Opera"
 
     if platform == "Mac OS X":
         platform = "macOS"
