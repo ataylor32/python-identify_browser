@@ -5,6 +5,7 @@ authors = [
     { name="Adam Taylor", email="ataylor32@gmail.com" },
 ]
 description = "A function that accepts a user agent string (and, optionally, Sec-CH-UA and Sec-CH-UA-Platform headers) and returns its best guess at the browser name, version, and platform."
+license = "MIT"
 readme = "README.rst"
 dependencies = [
     "ua-parser>=1.0.2",
@@ -15,7 +16,6 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
 
