@@ -1,6 +1,6 @@
 [project]
 name = "identify_browser"
-version = "1.0.0"
+version = "1.1.0"
 authors = [
     { name="Adam Taylor", email="ataylor32@gmail.com" },
 ]
